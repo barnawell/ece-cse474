@@ -2,6 +2,6 @@
 
 int main(){
 
-    printf("Try number 3923 for hello world in .c format");
+    printf("hello world\n");
     return 0;
 }
