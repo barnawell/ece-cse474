@@ -6,8 +6,8 @@ int speaker = 2;
 int LED = 10;
 
 
-const unsigned long event1_speaker = 2;
-const unsigned long event2_LED = 200;
+const unsigned long event1_speaker = 4;
+const unsigned long event2_LED = 400;
 
 unsigned long prev_time1 = 0;
 unsigned long prev_time2 = 0;
@@ -37,7 +37,7 @@ void speaker_hz(){
 
     prev_time1 = currentTime;
 
-  } else {
+  } else if(currentTime == prev_time1 + event1_speaker / 2) {
 
     digitalWrite(speaker, LOW);
     
@@ -73,10 +73,20 @@ void loop() {
     }else{ 
       
       speaker_hz();
-      LED_blink();
-
     }
-  
+
+    LED_blink();
+    // speaker_hz();
+    // if(millis() >= 1000){ //once you get to five seconds, the void loop holds here
+     
+    //  //do nothing
+
+    // }else{ 
+      
+    //   LED_blink();
+    // }
+
+    
 
 }
 
